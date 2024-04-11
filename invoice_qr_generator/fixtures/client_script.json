@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 1,
+  "modified": "2023-12-13 10:54:34.520941",
+  "module": "Invoice QR Generator",
+  "name": "Sales Invoice-Genarate QR Code",
+  "script": "frappe.ui.form.on('Sales Invoice', {\n    before_submit: function(frm) {\n        frappe.call({\n            method: \"invoice_qr_generator.invoice_qr_generator.create_qr.generate_qr_code\",\n            args:{\n                invoice_name:frm.doc.name\n            },\n            callback: function(response) {\n                if (!response.exc) {\n                    frm.doc.custom_invoice_qr_detail=response.message;\n                    // frm.doc.refresh_field()\n                } \n                \n            }\n        });\n    }\n});\n\n\n",
+  "view": "Form"
+ }
+]

@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include invoice_qr_generator *.css
+recursive-include invoice_qr_generator *.csv
+recursive-include invoice_qr_generator *.html
+recursive-include invoice_qr_generator *.ico
+recursive-include invoice_qr_generator *.js
+recursive-include invoice_qr_generator *.json
+recursive-include invoice_qr_generator *.md
+recursive-include invoice_qr_generator *.png
+recursive-include invoice_qr_generator *.py
+recursive-include invoice_qr_generator *.svg
+recursive-include invoice_qr_generator *.txt
+recursive-exclude invoice_qr_generator *.pyc
